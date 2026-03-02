@@ -17,4 +17,5 @@ public:
     float walk_acceleration{30.0f};
     float jump_velocity{15.0f};
     float terminal_velocity{15.0f};
+    float sprint_acceleration_multiplier{2.0f};
 };

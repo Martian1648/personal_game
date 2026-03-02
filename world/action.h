@@ -11,7 +11,9 @@ enum class ActionType {
     None,
     Jump,
     MoveLeft,
-    MoveRight
+    MoveRight,
+    SprintLeft,
+    SprintRight
 };
 class Action {
 public:
@@ -28,5 +30,11 @@ class MoveRight :public Action {
 };
 
 class MoveLeft :public Action {
+    void perform(World& world, GameObject& obj) override;
+};
+class SprintLeft :public Action {
+    void perform(World& world, GameObject& obj) override;
+};
+class SprintRight :public Action {
     void perform(World& world, GameObject& obj) override;
 };

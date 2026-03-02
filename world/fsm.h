@@ -14,10 +14,10 @@ enum class ActionType;
 class State;
 
 enum class StateType {
-    Standing, InAir, Running
+    Standing, InAir, Running, Sprinting
 };
 enum class Transition {
-    Jump, Stop, Move
+    Jump, Stop, Move, Plant, Chill
 };
 
 using Transitions = std::map<std::pair<StateType,Transition>,StateType>;

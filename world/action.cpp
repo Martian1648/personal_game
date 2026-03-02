@@ -17,3 +17,12 @@ void MoveRight::perform(World &world, GameObject &obj) {
 void MoveLeft::perform(World &world, GameObject &obj) {
     obj.physics.acceleration.x = -obj.physics.walk_acceleration;
 }
+
+void SprintLeft::perform(World &world, GameObject &obj) {
+    obj.physics.acceleration.x *= obj.physics.sprint_acceleration_multiplier;
+}
+
+void SprintRight::perform(World &world, GameObject &obj) {
+    obj.physics.acceleration.x *= obj.physics.sprint_acceleration_multiplier;
+}
+

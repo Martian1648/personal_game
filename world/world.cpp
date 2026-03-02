@@ -47,12 +47,15 @@ GameObject *World::create_player() {
         {{StateType::Standing, Transition::Move}, StateType::Running},
         {{StateType::Running, Transition::Stop}, StateType::Standing},
         {{StateType::Running, Transition::Jump}, StateType::InAir},
+        {{StateType::Running, Transition::Plant}, {StateType::Sprinting}},
+        {{StateType::Sprinting, Transition::Chill}, {StateType::Running}},
 
     };
     States states = {
         {StateType::Standing, new Standing()},
         {StateType::InAir, new InAir()},
-        {StateType::Running, new Running()}
+        {StateType::Running, new Running()},
+        {StateType::Sprinting, new Sprinting()},
     };
     FSM* fsm = new FSM{transitions, states, StateType::Standing};
 
