@@ -11,6 +11,7 @@
 #include "physics.h"
 #include "gameobject.h"
 #include "states.h"
+#include "keyboardinput.h"
 
 World::World(int width, int height):
 tilemap{width,height}{
@@ -54,8 +55,10 @@ GameObject *World::create_player() {
         {StateType::Running, new Running()}
     };
     FSM* fsm = new FSM{transitions, states, StateType::Standing};
+
+    Keyboard_Input* input = new Keyboard_Input();
     player = std::make_unique<GameObject>(Vec<float>{10,3}, Vec<int>{1, 1},*this, fsm,
-        Color{255,0,0,255});
+        Color{255,0,0,255}, input);
     return player.get();
 }
 

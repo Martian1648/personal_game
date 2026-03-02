@@ -5,6 +5,8 @@
 */
 
 #include "game.h"
+#include "input.h"
+#include "assetmanager.h"
 
 Game::Game(std::string title, int width, int height) :
 graphics{title, width, height},world{32,11},camera{graphics, 64}, dt{1.0/60.0}, lag{0.0},
@@ -22,11 +24,12 @@ prev_counter(SDL_GetPerformanceCounter()){
     world.add_platform(13,4,6,1);
 
     player = world.create_player();
+    player->sprite=AssetManager::get_game_object_sprite("player", graphics);
     camera.set_location(player->physics.position);
 }
 
 void Game::input() {
-    player->input(world);
+    player->input->get_input();
     camera.handle_input();
 }
 
@@ -35,6 +38,7 @@ void Game::update() {
     lag += (now - prev_counter) / (double) performance_frequency;
     prev_counter = now;
     while (lag >= dt) {
+        player->input->handle_input(world, *player);
         player->update(world, dt);
         world.update(dt);
         // put the camera slightly ahead of the player
@@ -45,6 +49,8 @@ void Game::update() {
     }
 }
 
+
+
 void Game::render() {
     // clear
     graphics.clear();
@@ -54,9 +60,14 @@ void Game::render() {
 
     //draw player
     auto [player_position, color] = player->get_sprite();
-    camera.render(player_position, color);
+    camera.render(*player);
 
     graphics.update();
 }
+
+void Game::handle_event(SDL_Event *event) {
+    player->input->collect_discrete_event(event);
+}
+
 
 

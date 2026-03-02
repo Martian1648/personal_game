@@ -48,7 +48,9 @@ add_subdirectory(graphics)
 add_subdirectory(world)
 
 add_library(game_lib
-game.cpp game.h)
+game.cpp game.h
+        assetmanager.cpp
+        assetmanager.h)
 
 
 

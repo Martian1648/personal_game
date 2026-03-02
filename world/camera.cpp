@@ -75,7 +75,7 @@ void Camera::render(const Tilemap &tilemap) const {
                 render(position, {0,255,255,255});
             }
             else {
-                render(position, {255,0,255,255});
+                render(position, {255,0,255,255}, true);
             }
             if (grid_toggle.on) {
                 render(position, {0,0,0, 0}, false);
@@ -83,6 +83,19 @@ void Camera::render(const Tilemap &tilemap) const {
         }
     }
 }
+
+void Camera::render(const Vec<float> &position, const Sprite &sprite) const {
+    Vec<float> pixel = world_to_screen(position);
+    pixel.y += tilesize/2;
+    graphics.draw_sprite(pixel, sprite);
+}
+
+void Camera::render(const GameObject &obj) const {
+    render(obj.physics.position, obj.color);
+    render(obj.physics.position, obj.sprite);
+}
+
+
 
 void Camera::set_location(const Vec<float> & new_location) {
     {
