@@ -1,0 +1,51 @@
+# Build directories
+/cmake-build-*/
+/build/
+/out/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+Makefile
+install_manifest.txt
+
+# Compiler / linker outputs
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+*.i*
+*.pdb
+*.ilk
+
+# Testing / coverage
+Testing/
+*.gcda
+*.gcno
+*.gcov
+coverage/
+
+# JetBrains user-local files
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/shelf/
+.idea/**/dictionaries/
+.idea/**/httpRequests/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+Desktop.ini
