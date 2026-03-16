@@ -7,6 +7,7 @@ struct Sprite {
     std::string filename;
     Vec<float> location{0,0};
     Vec<float> size{0,0};
+    Vec<float> scaler{1,1};
     float scale{1};
     Vec<float> shift{0,0};
     Vec<float> center{0,0};

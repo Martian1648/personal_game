@@ -18,6 +18,7 @@ void convert_sprites(std::vector<Sprite>& sprites, Graphics& graphics, GameObjec
         sprite.filename = (std::filesystem::current_path() / "assets" / sprite.filename).string();
         sprite.texture_id = graphics.get_texture_id(sprite.filename);
         sprite.shift = {-sprite.size.x/2, -sprite.size.y};
+        sprite.scale = sprite.scaler.x/sprite.scaler.y;
         sprite.center = sprite.size / 2.0f;
         std::vector<Sprite> sprite_frames;
         for (int i = 0; i < sprite.number_of_frames; ++i) {

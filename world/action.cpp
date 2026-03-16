@@ -12,10 +12,12 @@ void Jump::perform(World &, GameObject &obj) {
 
 void MoveRight::perform(World &world, GameObject &obj) {
     obj.physics.acceleration.x = obj.physics.walk_acceleration;
+
 }
 
 void MoveLeft::perform(World &world, GameObject &obj) {
     obj.physics.acceleration.x = -obj.physics.walk_acceleration;
+
 }
 
 void SprintLeft::perform(World &world, GameObject &obj) {
