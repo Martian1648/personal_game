@@ -2,19 +2,37 @@
   "sprites" : [
     {
       "name" : "idle",
-      "filename" : "IDLE.png",
+      "filename" : "player_idle.png",
       "location" : [0,0],
-      "size" : [36,36],
-      "scaler": [64,36],
+      "size" : [42,42],
+      "scaler": [64,42],
       "number_of_frames": 7,
       "dt_per_frame" : 0.1
     },
     {
       "name" : "walking",
-      "filename" : "WALK.png",
+      "filename" : "player_walk.png",
       "location" : [0,0],
-      "size" : [36,36],
-      "scaler": [64,36],
+      "size" : [42,42],
+      "scaler": [64,42],
+      "number_of_frames": 8,
+      "dt_per_frame" : 0.1
+    },
+    {
+      "name" : "jumping",
+      "filename" : "player_jump.png",
+      "location" : [0,0],
+      "size" : [42,42],
+      "scaler": [64,42],
+      "number_of_frames": 5,
+      "dt_per_frame" : 0.1
+    },
+    {
+      "name" : "sprinting",
+      "filename" : "player_run.png",
+      "location" : [0,0],
+      "size" : [42,42],
+      "scaler": [64,42],
       "number_of_frames": 8,
       "dt_per_frame" : 0.1
     }
@@ -26,7 +44,8 @@
     "gravity" : -30.0,
     "damping": 0.9,
     "walk_acceleration": 60.0,
-    "jump_velocity": 20.0,
-    "terminal_velocity" : 30.0
+    "jump_velocity": 10.0,
+    "terminal_velocity" : 30.0,
+    "sprint_acceleration_multiplier" : 1.5
   }
 }

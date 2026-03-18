@@ -33,6 +33,6 @@ public:
     void on_enter(World &, GameObject &obj) override;
     void update(World &, GameObject &, double dt) override;
 
-    const double cooldown = 1;
+    const double cooldown = .8;
     double elapsed = 0;
 };

@@ -5,6 +5,9 @@
 */
 
 #include "states.h"
+
+#include <ranges>
+
 #include "action.h"
 #include "world.h"
 
@@ -29,11 +32,16 @@ Action *Standing::input(World &world, GameObject &obj, ActionType action_type) {
     }
     else if (action_type==ActionType::MoveRight) {
         obj.fsm->transition(Transition::Move, world, obj);
-
+        for (auto& animated_sprite: obj.sprites | std::views::values) {
+            animated_sprite.flip(false);
+        }
         return new MoveRight();
     }
     else if (action_type==ActionType::MoveLeft) {
         obj.fsm->transition(Transition::Move, world, obj);
+        for (auto& animated_sprite: obj.sprites | std::views::values) {
+            animated_sprite.flip(true);
+        }
         return new MoveLeft();
     }
     return nullptr;
@@ -80,6 +88,7 @@ Action *Running::input(World &world, GameObject &obj, ActionType action_type) {
 
 void Sprinting::on_enter(World &, GameObject &obj) {
     elapsed= cooldown;
+    obj.set_sprite("sprinting");
     obj.color={0,255,0,255};
 }
 
