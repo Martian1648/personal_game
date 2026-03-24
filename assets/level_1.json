@@ -13,105 +13,105 @@
                 0,
                 0
             ],
-            "tile": "floor-tiles.json:green_grass_edge_patch_right"
+            "tile": "floor-tiles.json:green_grass_half_top_right"
         },
         {
             "pos": [
                 0,
                 1
             ],
-            "tile": "floor-tiles.json:cliff_knob_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 2
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 3
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 4
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 5
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 6
             ],
-            "tile": "floor-tiles.json:ground_top_left"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 7
             ],
-            "tile": "floor-tiles.json:ground_bottom_left"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 8
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 9
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 10
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 11
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 12
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 13
             ],
-            "tile": "floor-tiles.json:green_grass_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 0,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_left"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
@@ -119,34 +119,13 @@
                 0
             ],
             "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                1,
-                5
-            ],
-            "tile": "floor-tiles.json:stalactite_1_bits"
-        },
-        {
-            "pos": [
-                1,
-                6
-            ],
-            "tile": "floor-tiles.json:stalactite_1_base"
-        },
-        {
-            "pos": [
-                1,
-                7
-            ],
-            "tile": "floor-tiles.json:ground_bottom_center"
         },
         {
             "pos": [
                 1,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
@@ -158,449 +137,722 @@
         {
             "pos": [
                 2,
-                1
+                6
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_corner_left"
+        },
+        {
+            "pos": [
+                2,
+                7
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                2,
+                8
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                2,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                2,
+                10
             ],
             "tile": "floor-tiles.json:green_grass_cliff_top_left"
         },
         {
             "pos": [
                 2,
-                6
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                2,
-                7
-            ],
-            "tile": "floor-tiles.json:green_grass_half_top_right"
-        },
-        {
-            "pos": [
-                2,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 3,
                 0
-            ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
-        },
-        {
-            "pos": [
-                3,
-                1
             ],
             "tile": "floor-tiles.json:green_grass_edge_patch_left"
         },
         {
             "pos": [
                 3,
-                2
+                1
             ],
             "tile": "floor-tiles.json:green_grass_cliff_top_left"
         },
         {
             "pos": [
                 3,
-                6
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                3,
-                7
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                3,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                4,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_edge_patch_right"
-        },
-        {
-            "pos": [
-                4,
-                1
-            ],
-            "tile": "floor-tiles.json:ground_middle_left"
-        },
-        {
-            "pos": [
-                4,
-                2
-            ],
-            "tile": "floor-tiles.json:green_grass_cliff_top_right"
-        },
-        {
-            "pos": [
-                4,
                 6
             ],
             "tile": "floor-tiles.json:green_grass_bottom_corner_right"
         },
         {
             "pos": [
-                4,
+                3,
                 7
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                3,
+                8
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                3,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                3,
+                10
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_right"
+        },
+        {
+            "pos": [
+                3,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                4,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_center"
+        },
+        {
+            "pos": [
+                4,
+                1
             ],
             "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
                 4,
+                6
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_corner_left"
+        },
+        {
+            "pos": [
+                4,
+                7
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                4,
+                8
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                4,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                4,
+                10
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_left"
+        },
+        {
+            "pos": [
+                4,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                5,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_center"
+        },
+        {
+            "pos": [
+                5,
+                1
+            ],
+            "tile": "floor-tiles.json:green_grass_edge_patch_left"
+        },
+        {
+            "pos": [
+                5,
+                2
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_left"
+        },
+        {
+            "pos": [
+                5,
+                6
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_corner_right"
         },
         {
             "pos": [
                 5,
                 7
             ],
-            "tile": "floor-tiles.json:green_grass_platform_right"
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                5,
+                8
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                5,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                5,
+                10
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_right"
         },
         {
             "pos": [
                 5,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                6,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_center"
+        },
+        {
+            "pos": [
+                6,
+                1
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_center"
+        },
+        {
+            "pos": [
+                6,
+                2
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
                 6,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                7,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_center"
+        },
+        {
+            "pos": [
+                7,
+                1
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_center"
+        },
+        {
+            "pos": [
+                7,
+                2
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
                 7,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 8,
                 0
             ],
-            "tile": "floor-tiles.json:green_grass_top_center"
+            "tile": "floor-tiles.json:green_grass_middle_center"
         },
         {
             "pos": [
                 8,
-                14
+                1
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:green_grass_middle_center"
         },
         {
             "pos": [
-                9,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                9,
+                8,
                 2
-            ],
-            "tile": "floor-tiles.json:green_grass_platform_left"
-        },
-        {
-            "pos": [
-                9,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                10,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                10,
-                2
-            ],
-            "tile": "floor-tiles.json:green_grass_hollow_top_center"
-        },
-        {
-            "pos": [
-                10,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                11,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                11,
-                2
-            ],
-            "tile": "floor-tiles.json:green_grass_hollow_top_center"
-        },
-        {
-            "pos": [
-                11,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                12,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                12,
-                2
-            ],
-            "tile": "floor-tiles.json:green_grass_platform_right"
-        },
-        {
-            "pos": [
-                12,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                13,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                13,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                14,
-                0
             ],
             "tile": "floor-tiles.json:green_grass_edge_patch_left"
         },
         {
             "pos": [
-                14,
-                1
+                8,
+                3
             ],
             "tile": "floor-tiles.json:green_grass_cliff_top_left"
         },
         {
             "pos": [
-                14,
+                8,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
-                15,
+                9,
                 0
             ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
+            "tile": "floor-tiles.json:green_grass_edge_patch_right"
         },
         {
             "pos": [
-                15,
+                9,
                 1
             ],
-            "tile": "floor-tiles.json:green_grass_top_center"
+            "tile": "floor-tiles.json:cliff_knob_right"
         },
         {
             "pos": [
-                15,
-                3
-            ],
-            "tile": "floor-tiles.json:green_grass_ledge_edge_left"
-        },
-        {
-            "pos": [
-                15,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                16,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
-        },
-        {
-            "pos": [
-                16,
-                1
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                16,
-                3
-            ],
-            "tile": "floor-tiles.json:green_grass_hollow_top_center"
-        },
-        {
-            "pos": [
-                16,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                17,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
-        },
-        {
-            "pos": [
-                17,
-                1
-            ],
-            "tile": "floor-tiles.json:green_grass_edge_patch_left"
-        },
-        {
-            "pos": [
-                17,
+                9,
                 2
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:cliff_knob_right"
         },
         {
             "pos": [
-                17,
+                9,
                 3
             ],
-            "tile": "floor-tiles.json:green_grass_armpit_left"
+            "tile": "floor-tiles.json:green_grass_cliff_top_right"
         },
         {
             "pos": [
-                17,
+                9,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                10,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                10,
+                8
+            ],
+            "tile": "floor-tiles.json:green_grass_iso_bottom"
+        },
+        {
+            "pos": [
+                10,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_iso_top"
+        },
+        {
+            "pos": [
+                10,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                11,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                11,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                12,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                12,
+                3
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_left"
+        },
+        {
+            "pos": [
+                12,
                 4
             ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                12,
+                5
+            ],
             "tile": "floor-tiles.json:green_grass_cliff_top_left"
         },
         {
             "pos": [
-                17,
+                12,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
-                18,
+                13,
                 0
             ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
+            "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
-                18,
-                1
-            ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
-        },
-        {
-            "pos": [
-                18,
-                2
-            ],
-            "tile": "floor-tiles.json:ground_bottom_left"
-        },
-        {
-            "pos": [
-                18,
+                13,
                 3
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_corner_right"
+        },
+        {
+            "pos": [
+                13,
+                4
             ],
             "tile": "floor-tiles.json:ground_top_left"
         },
         {
             "pos": [
-                18,
-                4
+                13,
+                5
             ],
             "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
-                18,
+                13,
                 14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                14,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                14,
+                4
             ],
             "tile": "floor-tiles.json:ground_top_center"
         },
         {
             "pos": [
-                19,
+                14,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                14,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                15,
                 0
             ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
+            "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
-                19,
-                1
+                15,
+                4
             ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
+            "tile": "floor-tiles.json:green_grass_bottom_center"
         },
         {
             "pos": [
-                19,
-                2
+                15,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_half_top_left"
+        },
+        {
+            "pos": [
+                15,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                16,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                16,
+                4
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_center"
+        },
+        {
+            "pos": [
+                16,
+                5
             ],
             "tile": "floor-tiles.json:ground_bottom_right"
         },
         {
             "pos": [
-                19,
+                16,
+                6
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                16,
+                7
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                16,
+                8
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                16,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                16,
+                10
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                16,
+                11
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_left"
+        },
+        {
+            "pos": [
+                16,
+                12
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_left"
+        },
+        {
+            "pos": [
+                16,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                17,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                17,
                 3
             ],
-            "tile": "floor-tiles.json:ground_top_right"
+            "tile": "floor-tiles.json:stalactite_1_bits"
+        },
+        {
+            "pos": [
+                17,
+                4
+            ],
+            "tile": "floor-tiles.json:stalactite_1_base"
+        },
+        {
+            "pos": [
+                17,
+                5
+            ],
+            "tile": "floor-tiles.json:ground_bottom_left"
+        },
+        {
+            "pos": [
+                17,
+                6
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                17,
+                7
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                17,
+                8
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                17,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                17,
+                10
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                17,
+                11
+            ],
+            "tile": "floor-tiles.json:green_grass_middle_right"
+        },
+        {
+            "pos": [
+                17,
+                12
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_right"
+        },
+        {
+            "pos": [
+                17,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                18,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                18,
+                4
+            ],
+            "tile": "floor-tiles.json:ground_top_center"
+        },
+        {
+            "pos": [
+                18,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_half_top_right"
+        },
+        {
+            "pos": [
+                18,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                19,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
                 19,
                 4
             ],
+            "tile": "floor-tiles.json:ground_top_center"
+        },
+        {
+            "pos": [
+                19,
+                5
+            ],
             "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
@@ -608,287 +860,476 @@
                 19,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 20,
                 0
             ],
-            "tile": "floor-tiles.json:green_grass_middle_center"
-        },
-        {
-            "pos": [
-                20,
-                1
-            ],
-            "tile": "floor-tiles.json:green_grass_edge_patch_right"
-        },
-        {
-            "pos": [
-                20,
-                2
-            ],
-            "tile": "floor-tiles.json:ground_middle_left"
-        },
-        {
-            "pos": [
-                20,
-                3
-            ],
-            "tile": "floor-tiles.json:ground_middle_left"
+            "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
                 20,
                 4
             ],
-            "tile": "floor-tiles.json:green_grass_cliff_top_right"
+            "tile": "floor-tiles.json:ground_top_center"
+        },
+        {
+            "pos": [
+                20,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
                 20,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_center"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 21,
                 0
             ],
-            "tile": "floor-tiles.json:green_grass_edge_patch_right"
+            "tile": "floor-tiles.json:green_grass_top_center"
         },
         {
             "pos": [
                 21,
-                1
+                4
             ],
-            "tile": "floor-tiles.json:green_grass_cliff_top_right"
+            "tile": "floor-tiles.json:ground_top_center"
         },
         {
             "pos": [
                 21,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                22,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                22,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                23,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                23,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                24,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                24,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                25,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                25,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                26,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                26,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                27,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                27,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                28,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                28,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                29,
-                0
-            ],
-            "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                29,
-                14
-            ],
-            "tile": "floor-tiles.json:ground_top_center"
-        },
-        {
-            "pos": [
-                30,
-                0
+                5
             ],
             "tile": "floor-tiles.json:green_grass_edge_patch_left"
         },
         {
             "pos": [
-                30,
-                1
+                21,
+                6
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:green_grass_cliff_top_left"
         },
         {
             "pos": [
-                30,
+                22,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                22,
+                4
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_corner_right"
+        },
+        {
+            "pos": [
+                22,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_armpit_right"
+        },
+        {
+            "pos": [
+                22,
+                6
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_right"
+        },
+        {
+            "pos": [
+                22,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                23,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                23,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_platform_right"
+        },
+        {
+            "pos": [
+                23,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                24,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                24,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                25,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                25,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_hollow_bottom_left"
+        },
+        {
+            "pos": [
+                25,
+                10
+            ],
+            "tile": "floor-tiles.json:green_grass_hollow_middle_left"
+        },
+        {
+            "pos": [
+                25,
+                11
+            ],
+            "tile": "floor-tiles.json:green_grass_hollow_top_left"
+        },
+        {
+            "pos": [
+                25,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                26,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                26,
                 2
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:green_grass_bottom_left"
         },
         {
             "pos": [
-                30,
+                26,
                 3
             ],
             "tile": "floor-tiles.json:ground_middle_right"
         },
         {
             "pos": [
-                30,
+                26,
                 4
             ],
             "tile": "floor-tiles.json:ground_middle_right"
+        },
+        {
+            "pos": [
+                26,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_left"
+        },
+        {
+            "pos": [
+                26,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_hollow_bottom_center"
+        },
+        {
+            "pos": [
+                26,
+                11
+            ],
+            "tile": "floor-tiles.json:green_grass_hollow_top_center"
+        },
+        {
+            "pos": [
+                26,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                27,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                27,
+                2
+            ],
+            "tile": "floor-tiles.json:ground_top_center"
+        },
+        {
+            "pos": [
+                27,
+                3
+            ],
+            "tile": "floor-tiles.json:ground_bottom_left"
+        },
+        {
+            "pos": [
+                27,
+                4
+            ],
+            "tile": "floor-tiles.json:ground_top_left"
+        },
+        {
+            "pos": [
+                27,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_half_top_left"
+        },
+        {
+            "pos": [
+                27,
+                9
+            ],
+            "tile": "floor-tiles.json:green_grass_hollow_bottom_right"
+        },
+        {
+            "pos": [
+                27,
+                10
+            ],
+            "tile": "floor-tiles.json:green_grass_hollow_middle_left"
+        },
+        {
+            "pos": [
+                27,
+                11
+            ],
+            "tile": "floor-tiles.json:green_grass_hollow_top_right"
+        },
+        {
+            "pos": [
+                27,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                28,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                28,
+                2
+            ],
+            "tile": "floor-tiles.json:ground_top_center"
+        },
+        {
+            "pos": [
+                28,
+                3
+            ],
+            "tile": "floor-tiles.json:ground_bottom_right"
+        },
+        {
+            "pos": [
+                28,
+                4
+            ],
+            "tile": "floor-tiles.json:ground_top_right"
+        },
+        {
+            "pos": [
+                28,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_half_top_right"
+        },
+        {
+            "pos": [
+                28,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                29,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                29,
+                2
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_right"
+        },
+        {
+            "pos": [
+                29,
+                3
+            ],
+            "tile": "floor-tiles.json:ground_middle_left"
+        },
+        {
+            "pos": [
+                29,
+                4
+            ],
+            "tile": "floor-tiles.json:ground_middle_left"
+        },
+        {
+            "pos": [
+                29,
+                5
+            ],
+            "tile": "floor-tiles.json:green_grass_cliff_top_right"
+        },
+        {
+            "pos": [
+                29,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                30,
+                0
+            ],
+            "tile": "floor-tiles.json:green_grass_half_top_left"
+        },
+        {
+            "pos": [
+                30,
+                1
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                30,
+                2
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                30,
+                3
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
+                30,
+                4
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 5
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 6
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 7
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 8
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 9
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 10
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 11
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 12
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 13
             ],
-            "tile": "floor-tiles.json:ground_middle_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         },
         {
             "pos": [
                 30,
                 14
             ],
-            "tile": "floor-tiles.json:ground_top_right"
+            "tile": "floor-tiles.json:ground_middle_center"
         }
     ],
     "width": 31

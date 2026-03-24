@@ -273,12 +273,6 @@ void LevelDesigner::save() {
     for (int y = 0; y < tilemap.height; ++y) {
         for (int x = 0; x < tilemap.width; ++x) {
             if (tilemap(x, y).sprite.texture_id > -1) {
-                if (tilemap(x,y).id=="floor-tiles.json:ground_middle_center") {
-                    tilemap(x,y).blocking=false;
-                    tilemap(x,y).id="";
-                    tilemap(x,y).sprite.texture_id=-1;
-                    continue;
-                }
                 level.tile_locations[{x, y}] = tilemap(x, y).id;
             }
         }
