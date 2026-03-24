@@ -12,7 +12,7 @@ width{width}, height{height}, tiles(width*height){
     }
 
     //fill map w/ open tiles
-    std::fill(std::begin(tiles), std::end(tiles), Tile::Open);
+
 }
 
 void Tilemap::check_bounds(int x, int y) const {

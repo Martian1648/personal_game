@@ -50,7 +50,9 @@ add_subdirectory(world)
 add_library(game_lib
 game.cpp game.h
         assetmanager.cpp
-        assetmanager.h)
+        assetmanager.h
+        leveldesigner.cpp
+        leveldesigner.h)
 
 
 
@@ -58,3 +60,5 @@ target_link_libraries(game_lib PUBLIC SDL3::SDL3 graphics world utility)
 
 add_executable(game main.cpp)
 target_link_libraries(game PUBLIC SDL3::SDL3 game_lib)
+add_executable(level_designer maindesigner.cpp)
+target_link_libraries(level_designer PUBLIC game_lib)

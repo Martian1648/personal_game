@@ -72,14 +72,14 @@ void Camera::render(const Tilemap &tilemap) const {
             const Tile& tile = tilemap(x,y);
             Vec<float> position{static_cast<float>(x), static_cast<float>(y)};
 
-            if (tile == Tile::Platform) {
-                render(position, {0,255,255,255});
+            if (tile.blocking) {
+                render(position, tile.sprite);
             }
             else {
-                render(position, {255,0,255,255}, true);
+                render(position, {100,100,100,255}, true);
             }
             if (grid_toggle.on) {
-                render(position, {0,0,0, 0}, false);
+                render(position, {0,0,0, 255}, false);
             }
         }
     }

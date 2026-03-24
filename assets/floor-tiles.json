@@ -1,0 +1,445 @@
+{
+  "tiles": [
+    {
+      "name": "green_grass_top_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [0, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_top_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [32, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_top_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [64, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_hollow_top_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [96, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_hollow_top_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [128, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_hollow_top_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [160, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_top_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [192, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_top_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [224, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_top_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [256, 0],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_middle_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [0, 32],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_middle_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [32, 32],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_middle_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [64, 32],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_hollow_middle_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [96, 32],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_hollow_middle_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [160, 32],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_middle_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [192, 32],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_middle_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [224, 32],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_middle_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [256, 32],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_bottom_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [0, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_bottom_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [32, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_bottom_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [64, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_hollow_bottom_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [96, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_hollow_bottom_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [128, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_hollow_bottom_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [160, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_bottom_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [192, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_bottom_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [224, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "ground_bottom_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [256, 64],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_cliff_top_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [32, 96],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_cliff_top_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [64, 96],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_edge_patch_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [128, 96],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_edge_patch_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [160, 96],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_iso_top",
+      "filename": "Floor_Tiles1.png",
+      "location": [192, 96],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "stalactite_1_base",
+      "filename": "Floor_Tiles1.png",
+      "location": [224, 96],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "stalactite_2_base",
+      "filename": "Floor_Tiles1.png",
+      "location": [256, 96],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_ledge_edge_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [0, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_armpit_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [32, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_armpit_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [64, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_ledge_edge_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [96, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "cliff_knob_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [128, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "cliff_knob_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [160, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_iso_bottom",
+      "filename": "Floor_Tiles1.png",
+      "location": [192, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "stalactite_1_bits",
+      "filename": "Floor_Tiles1.png",
+      "location": [224, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "stalactite_2_bits",
+      "filename": "Floor_Tiles1.png",
+      "location": [256, 128],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_bottom_corner_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [32, 160],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_bottom_corner_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [64, 160],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_half_top_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [128, 160],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_half_top_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [160, 160],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_platform_left",
+      "filename": "Floor_Tiles1.png",
+      "location": [192, 160],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_platform_center",
+      "filename": "Floor_Tiles1.png",
+      "location": [224, 160],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    },
+    {
+      "name": "green_grass_platform_right",
+      "filename": "Floor_Tiles1.png",
+      "location": [256, 160],
+      "size": [32, 32],
+      "scaler": [2, 1],
+      "number_of_frames": 1,
+      "dt_per_frame": -1
+    }
+  ]
+}

@@ -13,9 +13,9 @@
 #include "states.h"
 #include "keyboardinput.h"
 
-World::World(int width, int height):
-tilemap{width,height}{
-
+World::World(const Level& level):
+tilemap{level.width,level.height}{
+    load_level(level);
 }
 
 
@@ -23,7 +23,7 @@ void World::add_platform(float x, float y, float width, float height) {
     SDL_FRect rect {x,y,width,height};
     for (int i = 0; i < height; ++i) {
         for (int j = 0; j < width; ++j) {
-            tilemap(x+j, y+i) = Tile::Platform;
+            tilemap(x+j, y+i) = Tile{};
         }
     }
 }
@@ -36,11 +36,11 @@ bool World::collides(const Vec<float> &position) const {
     if (x >= tilemap.width || x < 0 || y >= tilemap.height || y < 0) {
         return true;
     }
-    return tilemap(x,y) == Tile::Platform;
+    return tilemap(x,y).blocking;
 }
 
 
-GameObject *World::create_player() {
+GameObject *World::create_player(const Level& level) {
     Transitions transitions = {
         {{StateType::Standing, Transition::Jump}, StateType::InAir},
         {{StateType::InAir, Transition::Stop}, StateType::Standing},
@@ -60,9 +60,9 @@ GameObject *World::create_player() {
     FSM* fsm = new FSM{transitions, states, StateType::Standing};
 
     Keyboard_Input* input = new Keyboard_Input();
-    player = std::make_unique<GameObject>( Vec<int>{1, 1},*this, fsm,
+    player = new GameObject( Vec<int>{1,1},*this, fsm,
         Color{255,0,0,255}, input);
-    return player.get();
+    return player;
 }
 
 
@@ -98,29 +98,35 @@ void World::update(float dt) {
 }
 
 void World::move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velocity) {
+    constexpr float epsilon = 1e-4f;
+    const Vec<float> bottom_left{position.x + epsilon, position.y + epsilon};
+    const Vec<float> bottom_right{position.x + size.x - epsilon, position.y + epsilon};
+    const Vec<float> top_left{position.x + epsilon, position.y + size.y - epsilon};
+    const Vec<float> top_right{position.x + size.x - epsilon, position.y + size.y - epsilon};
+
     // test sides first. if both collide move backward
     // bottom side
-    if (collides(position) && collides({position.x + size.x, position.y})) {
+    if (collides(bottom_left) && collides(bottom_right)) {
         position.y = std::ceil(position.y);
         velocity.y = 0;
     }
     // top side
-    else if (collides({position.x, position.y + size.y}) && collides({position.x + size.x, position.y + size.y})) {
+    else if (collides(top_left) && collides(top_right)) {
         position.y = std::floor(position.y);
         velocity.y = 0;
     }
     // left side
-    if (collides(position) && collides({position.x, position.y + size.y})) {
+    if (collides(bottom_left) && collides(top_left)) {
         position.x = std::ceil(position.x);
         velocity.x = 0;
     }
     // right side
-    else if (collides({position.x + size.x, position.y}) && collides({position.x + size.x, position.y + size.y})) {
+    else if (collides(bottom_right) && collides(top_right)) {
         position.x = std::floor(position.x);
         velocity.x = 0;
     }
     // test corners next, move back in smaller axis
-    if (collides(position)) {
+    if (collides(bottom_left)) {
         float dx = std::ceil(position.x) - position.x;
         float dy = std::ceil(position.y) - position.y;
         if (dx > dy) {
@@ -132,7 +138,7 @@ void World::move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velo
             velocity.x = 0;
         }
     }
-    else if (collides({position.x, position.y + size.y})) {
+    else if (collides(top_left)) {
         float dx = std::ceil(position.x) - position.x;
         float dy = position.y - std::floor(position.y);
         if (dx > dy) {
@@ -144,7 +150,7 @@ void World::move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velo
             velocity.x = 0;
         }
     }
-    else if (collides({position.x + size.x, position.y})) {
+    else if (collides(bottom_right)) {
         float dx = position.x - std::floor(position.x);
         float dy = std::ceil(position.y) - position.y;
         if (dx > dy) {
@@ -156,7 +162,7 @@ void World::move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velo
             velocity.x = 0;
         }
     }
-    else if (collides({position.x + size.x, position.y + size.y})) {
+    else if (collides(top_right)) {
         float dx = position.x - std::floor(position.x);
         float dy = position.y - std::floor(position.y);
         if (dx > dy) {
@@ -167,6 +173,12 @@ void World::move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velo
             position.x = std::floor(position.x);
             velocity.x = 0;
         }
+    }
+}
+
+void World::load_level(const Level &level) {
+    for (const auto& [pos, tile_id] : level.tile_locations) {
+        tilemap(pos.x, pos.y) = level.tile_types.at(tile_id);
     }
 }
 

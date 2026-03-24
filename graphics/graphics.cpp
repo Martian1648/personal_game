@@ -9,8 +9,8 @@
 #include <stdexcept>
 
 
-Graphics::Graphics(const std::string &title, int window_width, int window_height):
-title{title}, width{window_width}, height{window_height}{
+Graphics::Graphics(std::string title, int width, int height):
+ width{width}, height{height}{
     SDL_SetAppMetadata(title.data(), "1.0", NULL);
 
     if (!SDL_CreateWindowAndRenderer(title.data(), width, height, SDL_WINDOW_RESIZABLE, &window, &renderer)) {
@@ -24,7 +24,7 @@ title{title}, width{window_width}, height{window_height}{
 
 
 void Graphics::clear() {
-    SDL_SetRenderDrawColor(renderer, 255,0,0,255);
+    SDL_SetRenderDrawColor(renderer, 100,100,100,255);
     SDL_RenderClear(renderer);
 }
 
@@ -44,6 +44,9 @@ void Graphics::update() {
     SDL_RenderPresent(renderer);
 }
 
+void Graphics::set_title(const std::string &title) {
+    SDL_SetWindowTitle(window, title.c_str());
+}
 
 int Graphics::get_texture_id(const std::string &image_filename) {
     auto search = texture_ids.find(image_filename);

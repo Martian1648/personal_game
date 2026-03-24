@@ -2,7 +2,7 @@
 #include "vec.h"
 
 struct Sprite {
-    int texture_id{1};
+    int texture_id{-1};
     std::string name;
     std::string filename;
     Vec<float> location{0,0};

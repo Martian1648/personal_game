@@ -11,21 +11,21 @@
 #include <vec.h>
 
 #include "tilemap.h"
-
+#include "level.h"
 class GameObject;
 
 class World {
 public:
-    World(int width, int height);
+    World(const Level& level);
 
     void add_platform(float x, float y, float width, float height);
     bool collides(const Vec<float>&position) const;
-    GameObject* create_player();
+    GameObject* create_player(const Level& level);
     void update(float dt);
     void move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velocity);
-
+    void load_level(const Level& level);
     Tilemap tilemap;
 private:
 
-    std::unique_ptr<GameObject> player;
+    GameObject* player;
 };

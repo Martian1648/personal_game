@@ -18,6 +18,8 @@ world.cpp world.h
         input.h
         keyboardinput.cpp
         keyboardinput.h
+        level.cpp
+        level.h
 )
 
 target_include_directories(world PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

@@ -88,6 +88,14 @@ bool operator!=(const Vec<T>& left, const Vec<T>& right) {
     return !(left == right);
 }
 
+template<typename T>
+bool operator<(const Vec<T> &left, const Vec<T> &right) {
+    if (left.x != right.x) {
+        return left.x < right.x;
+    }
+    return left.y < right.y;
+}
+
 template <typename T>
 double distance(const Vec<T>& a, const Vec<T>& b) {
     Vec difference = a - b;
@@ -102,4 +110,10 @@ std::ostream& operator<<(std::ostream& os, const Vec<T>& vec) {
 template<typename T>
 float length(const Vec<T>& v) {
     return std::sqrt(v.x*v.x + v.y*v.y);
+}
+
+template<typename T>
+Vec<T> unit(const Vec<T> &v) {
+    float length = length(v);
+    return v / length;
 }

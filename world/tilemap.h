@@ -1,7 +1,13 @@
 #pragma once
 #include <vector>
+#include "sprite.h"
 
-enum class Tile {Open, Platform};
+class Tile {
+public:
+    Sprite sprite;
+    bool blocking{false};
+    std::string id;
+};
 class Tilemap {
 public:
     Tilemap(int width, int height);

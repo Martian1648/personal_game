@@ -47,3 +47,55 @@ void AssetManager::get_game_object_details(const std::string& name, Graphics& gr
     Physics physics = json.at("physics").get<Physics>();
     obj.physics=physics;
 }
+
+void convert_to_tiles(Graphics& graphics, Level &level, std::vector<Sprite>& sprites, const std::string& filename) {
+    for (auto& sprite : sprites) {
+        sprite.filename = (std::filesystem::current_path() / "assets" / sprite.filename).string();
+        sprite.texture_id = graphics.get_texture_id(sprite.filename);
+        sprite.shift = {-sprite.size.x/2, -sprite.size.y}; // anchor sprite at bottom corner
+        sprite.center = sprite.size / 2.0f;
+        sprite.scale = sprite.scaler.x/sprite.scaler.y;
+        Tile tile{sprite, true};
+        tile.id = filename + ":" +sprite.name;
+        level.tile_types[tile.id] = tile;
+    }
+}
+
+void AssetManager::get_level_details(Graphics &graphics, Level &level) {
+    auto path_start = std::filesystem::current_path() / "assets";
+    auto path = path_start / (level.name+ ".json");
+
+    std::ifstream file(path);
+    if (!file) {
+        throw std::runtime_error("Could not open file: " + path.string());
+    }
+
+    nlohmann::json json;
+    file >> json;
+
+    json.get_to(level);
+
+    // get all tile details from the file(s)
+    for (auto filename : level.tile_filenames) {
+        auto tiles_path = path_start / filename;
+        std::ifstream tile_file(tiles_path);
+        if (!tile_file) {
+            throw std::runtime_error("Could not open file: " + tiles_path.string());
+        }
+        nlohmann::json tile_json;
+        tile_file >> tile_json;
+        std::vector<Sprite> tile_sprites = tile_json.at("tiles").get<std::vector<Sprite>>();
+        convert_to_tiles(graphics, level, tile_sprites, filename);
+    }
+}
+
+void AssetManager::update_level_details(const Level& level) {
+    auto path = std::filesystem::current_path() / "assets" / (level.name + ".json");
+
+    std::ofstream file(path);
+    if (!file) {
+        throw std::runtime_error("Could not open file: " + path.string());
+    }
+    nlohmann::json j = level;
+    file << std::setw(4) << j;
+}
