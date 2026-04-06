@@ -920,6 +920,13 @@
         },
         {
             "pos": [
+                21,
+                14
+            ],
+            "tile": "floor-tiles.json:ground_middle_center"
+        },
+        {
+            "pos": [
                 22,
                 0
             ],
@@ -980,6 +987,13 @@
                 0
             ],
             "tile": "floor-tiles.json:green_grass_top_center"
+        },
+        {
+            "pos": [
+                24,
+                1
+            ],
+            "tile": "floor-tiles.json:angel_level_load"
         },
         {
             "pos": [

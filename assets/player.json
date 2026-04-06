@@ -38,7 +38,6 @@
     }
   ],
   "physics" : {
-    "position": [10,5],
     "velocity": [0,0],
     "acceleration" : [0,-30],
     "gravity" : -30.0,
@@ -47,5 +46,6 @@
     "jump_velocity": 10.0,
     "terminal_velocity" : 30.0,
     "sprint_acceleration_multiplier" : 1.5
-  }
+  },
+  "size": [1,1]
 }

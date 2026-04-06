@@ -12,9 +12,9 @@
 #include "../game.h"
 
 
-GameObject::GameObject(const Vec<int> &size, World& world,
+GameObject::GameObject(std::string name,
                        FSM* fsm, Color color, Input* input)
-    :size{size},fsm{fsm},  input{input}, color{color}{
+    :obj_name{name},fsm{fsm},  input{input}, color{color}{
 
 }
 

@@ -7,6 +7,8 @@ public:
     Sprite sprite;
     bool blocking{false};
     std::string id;
+    std::string event_name;
+
 };
 class Tilemap {
 public:

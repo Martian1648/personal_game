@@ -20,7 +20,11 @@ world.cpp world.h
         keyboardinput.h
         level.cpp
         level.h
+        audio.cpp
+        audio.h
+        events.cpp
+        events.h
 )
 
 target_include_directories(world PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(world PUBLIC SDL3::SDL3 utility graphics)
+target_link_libraries(world PUBLIC SDL3::SDL3 SDL3_mixer::SDL3_mixer utility graphics)

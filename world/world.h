@@ -13,19 +13,22 @@
 #include "tilemap.h"
 #include "level.h"
 class GameObject;
-
+class Audio;
+class Event;
 class World {
 public:
-    World(const Level& level);
+    World(const Level& level, Audio& audio,GameObject* player,std::map<std::string, Event*>& events);
 
     void add_platform(float x, float y, float width, float height);
     bool collides(const Vec<float>&position) const;
-    GameObject* create_player(const Level& level);
     void update(float dt);
     void move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velocity);
     void load_level(const Level& level);
+    bool end_level{false};
+    void touch_tiles(GameObject& obj);
     Tilemap tilemap;
-private:
-
+    Audio* audio;
     GameObject* player;
+    std::map<std::string, Event*> events;
+    std::vector<GameObject>game_objects;
 };
