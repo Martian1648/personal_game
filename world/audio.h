@@ -20,7 +20,8 @@ public:
     ~Audio();
 
     void load_sounds(const std::unordered_map<std::string, std::string> sound_files);
-    void play_sounds(const std::string& sound_name, bool loop_forever_in_background = false);
+    void play_sounds(const std::string& sound_name, bool loop_forever_in_background = false,
+        float loop_start_time = 0);
 
 private:
     SDL_AudioDeviceID device;

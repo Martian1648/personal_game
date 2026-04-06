@@ -5,6 +5,9 @@
 */
 
 #include "audio.h"
+
+#include <cmath>
+
 #include "algorithm"
 #include <stdexcept>
 #include <filesystem>
@@ -42,7 +45,7 @@ Audio::~Audio() {
 }
 
 void Audio::load_sounds(const std::unordered_map<std::string, std::string> sound_files) {
-    auto path = std::filesystem::current_path() / "assets" / "action-music.mp3";
+    auto path = std::filesystem::current_path() / "assets" / "prologue.mp3";
     std::ifstream input(path);
     if (!input) {
         throw std::runtime_error("Could not open " + path.string());
@@ -55,7 +58,8 @@ void Audio::load_sounds(const std::unordered_map<std::string, std::string> sound
     sounds["background"] = effect;
 }
 
-void Audio::play_sounds(const std::string &sound_name, bool loop_forever_in_background) {
+void Audio::play_sounds(const std::string &sound_name, bool loop_forever_in_background,
+    float loop_start_time) {
     auto sound = sounds.find(sound_name);
     if (sound == sounds.end()) {
         throw std::runtime_error("Cannot find sound: " + sound_name);
@@ -63,6 +67,7 @@ void Audio::play_sounds(const std::string &sound_name, bool loop_forever_in_back
     if (loop_forever_in_background) {
         SDL_PropertiesID props = SDL_CreateProperties();
         SDL_SetNumberProperty(props, MIX_PROP_PLAY_LOOPS_NUMBER, -1);
+        SDL_SetNumberProperty(props, MIX_PROP_PLAY_LOOP_START_MILLISECOND_NUMBER, std::floor(loop_start_time*1000.0));
         MIX_SetTrackAudio(background_music, sound->second);
         if (!MIX_PlayTrack(background_music, props)) {
             std::string msg{SDL_GetError()};

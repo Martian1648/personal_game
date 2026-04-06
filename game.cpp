@@ -30,7 +30,7 @@ prev_counter(SDL_GetPerformanceCounter()){
 
     player->fsm->current_state->on_enter(*world, *player);
     camera.set_location(player->physics.position);
-    audio.play_sounds("background", true);
+    audio.play_sounds("background", true, 46.28);
 }
 
 Game::~Game() {
@@ -99,7 +99,7 @@ void Game::load_level() {
 
     player->physics.position = {static_cast<float>(level.player_spawn_location.x),static_cast<float>(level.player_spawn_location.y)};
     camera.set_location(player->physics.position);
-    audio.play_sounds("background", true);
+    audio.play_sounds("background", true, 46.28);
 }
 
 void Game::create_player() {
