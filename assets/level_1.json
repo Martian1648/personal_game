@@ -123,6 +123,13 @@
         {
             "pos": [
                 1,
+                2
+            ],
+            "tile": "floor-tiles.json:green_grass_bottom_center"
+        },
+        {
+            "pos": [
+                1,
                 14
             ],
             "tile": "floor-tiles.json:ground_middle_center"

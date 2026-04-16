@@ -9,7 +9,7 @@
 #include "../utility/vec.h"
 class Input;
 class World;
-
+class AABB;
 using Sprites = std::map<std::string, AnimatedSprite>;
 
 class GameObject {
@@ -19,6 +19,7 @@ public:
     ~GameObject();
     void update(World& world, double dt);
     std::pair<Vec<float>, Color> get_sprite() const;
+    AABB get_bounding_box();
     std::string obj_name;
     void set_sprite(const std::string& next_sprite);
     Physics physics;
@@ -29,4 +30,7 @@ public:
     Sprites sprites;
     Sprite sprite;
     std::string sprite_name;
+    int health;
+    int max_health;
+    int damage;
 };

@@ -24,6 +24,8 @@ world.cpp world.h
         audio.h
         events.cpp
         events.h
+        quadtree.cpp
+        quadtree.h
 )
 
 target_include_directories(world PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

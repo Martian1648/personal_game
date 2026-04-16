@@ -7,6 +7,8 @@
 #include "world.h"
 #include <SDL3/SDL_rect.h>
 #include <algorithm>
+#include <iostream>
+
 #include "audio.h"
 #include "events.h"
 #include "physics.h"
@@ -15,10 +17,18 @@
 #include "keyboardinput.h"
 
 World::World(const Level& level, Audio& audio,GameObject* player,std::map<std::string, Event*>& events):
-tilemap{level.width,level.height}, audio{&audio}, player{player}, events{events}{
+tilemap{level.width,level.height}, audio{&audio}, player{player}, events{events}, quadtree{
+AABB{{level.width/2.0f, level.height/2.0f},{level.width/2.0f, level.height/2.0f}}}{
     load_level(level);
 }
 
+World::~World() {
+    for (auto obj:game_objects) {
+        if (obj == player) continue;
+        delete obj;
+    }
+
+}
 
 void World::add_platform(float x, float y, float width, float height) {
     SDL_FRect rect {x,y,width,height};
@@ -47,35 +57,47 @@ bool World::collides(const Vec<float> &position) const {
 
 void World::update(float dt) {
     // currently only updating player
-    auto position = player->physics.position;
-    auto velocity = player->physics.velocity;
-    auto acceleration = player->physics.acceleration;
+    for (auto& obj : game_objects) {
+        // currently only updating player
+        obj->update(*this, dt);
+        auto position = obj->physics.position;
+        auto velocity = obj->physics.velocity;
+        auto acceleration = obj->physics.acceleration;
 
-    velocity += 0.5f * acceleration * dt;
-    position += velocity * dt;
-    velocity += 0.5f * acceleration * dt;
-    velocity.x *= player->physics.damping;
+        velocity += 0.5f * acceleration * dt;
+        position += velocity * dt;
+        velocity += 0.5f * acceleration * dt;
+        velocity.x *= obj->physics.damping;
 
-    velocity.x = std::clamp(velocity.x, -player->physics.terminal_velocity, player->physics.terminal_velocity);
-    velocity.y = std::clamp(velocity.y, -player->physics.terminal_velocity, player->physics.terminal_velocity);
+        velocity.x = std::clamp(velocity.x, -obj->physics.terminal_velocity, obj->physics.terminal_velocity);
+        velocity.y = std::clamp(velocity.y, -obj->physics.terminal_velocity, obj->physics.terminal_velocity);
 
-    // check for x collisions
-    // Check for collisions with the world - x direction
-    Vec<float> future_position{position.x, player->physics.position.y};
-    Vec<float> future_velocity{velocity.x, 0};
-    move_to(future_position, player->size, future_velocity);
+        // check for x collisions
+        // Check for collisions with the world - x direction
+        Vec<float> future_position{position.x, obj->physics.position.y};
+        Vec<float> future_velocity{velocity.x, 0};
+        move_to(future_position, obj->size, future_velocity);
 
-    // y direction attempt after (maybe) moving in x
-    future_velocity.y = velocity.y;
-    future_position.y = position.y;
-    move_to(future_position, player->size, future_velocity);
+        // y direction attempt after (maybe) moving in x
+        future_velocity.y = velocity.y;
+        future_position.y = position.y;
+        move_to(future_position, obj->size, future_velocity);
 
-    // update player
-    player->physics.position = future_position;
-    player->physics.velocity = future_velocity;
+        // update player
+        obj->physics.position = future_position;
+        obj->physics.velocity = future_velocity;
 
-    touch_tiles(*player);
+        touch_tiles(*obj);
+        build_quadtree();
+        std::vector<GameObject*> collides_with = quadtree.query_range(player->get_bounding_box());
+        if (collides_with.size()>1) {
+            std::cout<<"collided";
+        }
+    }
+
 }
+
+
 
 void World::move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velocity) {
     constexpr float epsilon = 1e-4f;
@@ -163,25 +185,42 @@ void World::load_level(const Level &level) {
     audio->load_sounds({});
 
     for (const auto& [pos, enemy_name] : level.enemy_locations) {
-        GameObject enemy{enemy_name, nullptr,{12,12,12,12}, nullptr};
-        enemy.physics.position = pos;
+        auto enemy = new GameObject{enemy_name, nullptr,{12,12,12,12}, nullptr};
+        enemy->physics.position = pos;
         game_objects.push_back(enemy);
     }
+    game_objects.push_back(player);
 }
 
-void World::touch_tiles(GameObject &obj) {
-    int x = std::floor(obj.physics.position.x);
-    int y = std::floor(obj.physics.position.y);
-    const std::vector<Vec<int>> displacements{{0,0},{obj.size.x, 0}, {0, obj.size.y}, {obj.size.x, obj.size.y}};
-    for (const auto& displacement:displacements) {
-        Tile& tile = tilemap(x+displacement.x, y+displacement.y);
+void World::touch_tiles(GameObject& obj) {
+    float epsilon = 0.001f;
+
+
+    const std::vector<Vec<float>> tiles {
+            {obj.physics.position.x - epsilon, obj.physics.position.y},
+            {obj.physics.position.x, obj.physics.position.y + obj.size.y + epsilon},
+            {obj.physics.position.x + obj.size.x + epsilon, obj.physics.position.y},
+            {obj.physics.position.x, obj.physics.position.y - epsilon}
+    };
+
+    for (const auto& p : tiles) {
+        int x = static_cast<int>(std::floor(p.x));
+        int y = static_cast<int>(std::floor(p.y));
+        Tile& tile = tilemap(x, y);
         if (!tile.event_name.empty()) {
             auto itr = events.find(tile.event_name);
-            if (itr==events.end()) {
+            if (itr == events.end()) {
                 throw std::runtime_error("Cannot find event: " + tile.event_name);
             }
             itr->second->perform(*this, obj);
         }
+    }
+}
+
+void World::build_quadtree() {
+    quadtree.clear();
+    for (auto obj : game_objects) {
+        quadtree.insert(obj);
     }
 }
 

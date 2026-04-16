@@ -5,7 +5,7 @@
 */
 
 #include "gameobject.h"
-
+#include "quadtree.h"
 #include "action.h"
 #include "input.h"
 #include "physics.h"
@@ -23,12 +23,21 @@ GameObject::~GameObject() {
     delete input;
 }
 
-
-
+AABB GameObject::get_bounding_box() {
+    Vec<float> half_size = {size.x / 2.0f, size.y/2.0f};
+    Vec<float>center = {
+        physics.position.x + half_size.x,
+        physics.position.y + half_size.y
+    };
+    AABB bounding_box {center, half_size};
+    return bounding_box;
+}
 
 
 void GameObject::update(World& world, double dt) {
-    fsm->current_state->update(world, *this, dt);
+    if (fsm != nullptr) {
+        fsm->current_state->update(world, *this, dt);
+    }
     sprites[sprite_name].update(dt);
     set_sprite(sprite_name);
 }
