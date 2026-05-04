@@ -40,6 +40,7 @@ void GameObject::update(World& world, double dt) {
     }
     sprites[sprite_name].update(dt);
     set_sprite(sprite_name);
+    if (i_frames_remaining > 0.0) i_frames_remaining -=dt;
 }
 
 
@@ -66,3 +67,20 @@ void GameObject::set_sprite(const std::string &next_sprite) {
 }
 
 
+void GameObject::take_damage(int attack_damage) {
+    if (i_frames_remaining > 0.0) return;
+    health -= attack_damage;
+    i_frames_remaining = 2;
+    if (health <= 0) {
+        is_alive = false;
+    }
+}
+
+bool GameObject::flash_sprite() const {
+    if (i_frames_remaining <= 0.0) {
+        return false;
+    }
+
+    // alternate overlay on/off every 80 ms
+    return ((SDL_GetTicks() / 80) % 2) == 0;
+}

@@ -11,8 +11,17 @@
 #include "graphics.h"
 #include "physics.h"
 #include "level.h"
+#include "audio.h"
+#include "tilemap.h"
 
+class World;
 class GameObject;
+
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Sprite,name, filename, location, size, scaler, dt_per_frame, number_of_frames)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Physics, velocity,acceleration,gravity, damping,walk_acceleration, jump_velocity,terminal_velocity, sprint_acceleration_multiplier)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Tile, sprite, event_name, blocking);
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Sound, name, filename, loop_forever);
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Background, filename, scale, distance)
 //need to map vec to JSON
 template <typename T>
 void to_json( nlohmann::json& j, const Vec<T>& v) {
@@ -30,6 +39,8 @@ inline void to_json(nlohmann::json &j, const Level &level) {
     j["width"] = level.width;
     j["height"] = level.height;
     j["tile_filenames"] = level.tile_filenames;
+    j["sounds"] = level.sounds;
+    j["backgrounds"] = level.backgrounds;
     j["player_spawn_location"] = level.player_spawn_location;
     j["tiles"] = nlohmann::json::array();
     for (const auto &[pos, tile]: level.tile_locations) {
@@ -49,6 +60,8 @@ inline void from_json(const nlohmann::json &j, Level &level) {
     level.width = j.at("width").get<int>();
     level.height = j.at("height").get<int>();
     level.tile_filenames = j.at("tile_filenames").get<std::vector<std::string> >();
+    level.sounds = j.at("sounds").get<std::vector<Sound>>();
+    level.backgrounds = j.at("backgrounds").get<std::vector<Background>>();
     level.player_spawn_location = j.contains("player_spawn_location")
                                       ? j.at("player_spawn_location").get<Vec<int> >()
                                       : Vec<int>{-1, -1};
@@ -69,9 +82,7 @@ inline void from_json(const nlohmann::json &j, Level &level) {
     }
 }
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Sprite,name, filename, location, size, scaler, dt_per_frame, number_of_frames)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Physics, velocity,acceleration,gravity, damping,walk_acceleration, jump_velocity,terminal_velocity, sprint_acceleration_multiplier)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Tile, sprite, event_name, blocking);
+
 
 
 
@@ -79,4 +90,6 @@ namespace AssetManager {
     void get_game_object_details(const std::string& name, Graphics& graphics, GameObject& obj, bool random_start = false);
     void get_level_details(Graphics &graphics, Level &level);
     void update_level_details(const Level &level);
+    void get_available_items(const std::string &filename, Graphics& graphics, World& world);
+
 }

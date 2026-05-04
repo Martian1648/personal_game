@@ -143,11 +143,11 @@ void LevelDesigner::input() {
     }
 
     if (keys[SDL_SCANCODE_1]) {
-        place_enemy("bee");
+        place_enemy("rat");
     }
 
     if (keys[SDL_SCANCODE_2]) {
-        place_enemy("slime");
+        place_enemy("burd");
     }
     // timer for scrolling
 

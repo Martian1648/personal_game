@@ -1,0 +1,32 @@
+{
+    "projectiles":
+            [
+                {
+                    "name": "fireball",
+                    "sprites" : [
+                        {
+                            "name" : "idle",
+                            "filename" : "rock.png",
+                            "location" : [0, 0],
+                            "size" : [32, 32],
+                            "scaler" : [1,2],
+                            "number_of_frames" : 2,
+                            "dt_per_frame" : 0.1
+                        }
+                    ],
+                    "physics" : {
+                        "velocity": [0, 0],
+                        "acceleration" : [0, 0],
+                        "gravity": -30.0,
+                        "damping": 1.0,
+                        "walk_acceleration": 60.0,
+                        "jump_velocity": 20.0,
+                        "terminal_velocity": 30.0,
+                        "sprint_acceleration_multiplier" : 1.5
+                    },
+                    "damage" : 1,
+                    "lifetime" : 5,
+                    "size" : [1,1]
+                }
+            ]
+}

@@ -1,8 +1,63 @@
 {
+    "backgrounds": [
+        {
+            "distance": 6.0,
+            "filename": "sky.png",
+            "scale": 3.0
+        },
+        {
+            "distance": 5.0,
+            "filename": "far-clouds.png",
+            "scale": 3.0
+        },
+        {
+            "distance": 4.0,
+            "filename": "near-clouds.png",
+            "scale": 3.0
+        },
+        {
+            "distance": 3.0,
+            "filename": "far-mountains.png",
+            "scale": 3.0
+        },
+        {
+            "distance": 2.0,
+            "filename": "mountains.png",
+            "scale": 3.0
+        },
+        {
+            "distance": 1.0,
+            "filename": "trees.png",
+            "scale": 3.0
+        }
+    ],
+    "enemies": [
+        {
+            "enemy": "rat",
+            "pos": [
+                11.0,
+                1.0
+            ]
+        },
+        {
+            "enemy": "burd",
+            "pos": [
+                13.0,
+                1.0
+            ]
+        }
+    ],
     "height": 15,
     "player_spawn_location": [
         1,
         1
+    ],
+    "sounds": [
+        {
+            "filename": "prologue.mp3",
+            "loop_forever": true,
+            "name": "background"
+        }
     ],
     "tile_filenames": [
         "floor-tiles.json"
@@ -119,13 +174,6 @@
                 0
             ],
             "tile": "floor-tiles.json:green_grass_top_center"
-        },
-        {
-            "pos": [
-                1,
-                2
-            ],
-            "tile": "floor-tiles.json:green_grass_bottom_center"
         },
         {
             "pos": [

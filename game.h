@@ -10,6 +10,7 @@
 #include "world/gameobject.h"
 #include "world.h"
 
+enum class GameMode{Playing, Loss, Victory};
 
 class Game {
 public:
@@ -19,6 +20,7 @@ public:
     void input();
     void update();
     void render();
+    GameMode mode{GameMode::Playing};
 private:
     std::unique_ptr<GameObject> player;
     World* world = nullptr;
@@ -34,6 +36,8 @@ private:
     Events events;
     //level help
     void create_player();
+    void update_enemy(GameObject* obj);
     int current_level{0};
     void load_level();
+
 };

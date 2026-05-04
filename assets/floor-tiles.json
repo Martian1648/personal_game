@@ -649,6 +649,19 @@
       },
       "blocking": true,
       "event_name": "next_level"
+    },
+    {
+      "sprite": {
+        "name": "win_tile",
+        "filename": "Floor_Tiles1.png",
+        "location": [192, 480],
+        "size": [32, 32],
+        "scaler": [2, 1],
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": "end_game"
     }
   ]
 }

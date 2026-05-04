@@ -26,7 +26,15 @@ world.cpp world.h
         events.h
         quadtree.cpp
         quadtree.h
+        projectile.cpp
+        projectile.h
+        aiinput.h
+        aiinput.cpp
+        controllerinput.cpp
+        controllerinput.h
+        compositeinput.cpp
+        compositeinput.h
 )
 
 target_include_directories(world PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(world PUBLIC SDL3::SDL3 SDL3_mixer::SDL3_mixer utility graphics)
+target_link_libraries(world PUBLIC SDL3::SDL3 SDL3_mixer::SDL3_mixer  utility graphics)

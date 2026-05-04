@@ -23,3 +23,8 @@ class NextLevel: public Event {
 public:
     void perform(World &world, GameObject &obj) override;
 };
+
+class EndGame: public Event {
+public:
+    void perform(World &world, GameObject &obj) override;
+};

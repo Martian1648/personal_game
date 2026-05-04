@@ -7,8 +7,9 @@
 #include "world.h"
 #include <SDL3/SDL_rect.h>
 #include <algorithm>
+#include <cmath>
 #include <iostream>
-
+#include "projectile.h"
 #include "audio.h"
 #include "events.h"
 #include "physics.h"
@@ -58,44 +59,96 @@ bool World::collides(const Vec<float> &position) const {
 void World::update(float dt) {
     // currently only updating player
     for (auto& obj : game_objects) {
-        // currently only updating player
-        obj->update(*this, dt);
-        auto position = obj->physics.position;
-        auto velocity = obj->physics.velocity;
-        auto acceleration = obj->physics.acceleration;
 
-        velocity += 0.5f * acceleration * dt;
-        position += velocity * dt;
-        velocity += 0.5f * acceleration * dt;
-        velocity.x *= obj->physics.damping;
-
-        velocity.x = std::clamp(velocity.x, -obj->physics.terminal_velocity, obj->physics.terminal_velocity);
-        velocity.y = std::clamp(velocity.y, -obj->physics.terminal_velocity, obj->physics.terminal_velocity);
-
-        // check for x collisions
-        // Check for collisions with the world - x direction
-        Vec<float> future_position{position.x, obj->physics.position.y};
-        Vec<float> future_velocity{velocity.x, 0};
-        move_to(future_position, obj->size, future_velocity);
-
-        // y direction attempt after (maybe) moving in x
-        future_velocity.y = velocity.y;
-        future_position.y = position.y;
-        move_to(future_position, obj->size, future_velocity);
-
-        // update player
-        obj->physics.position = future_position;
-        obj->physics.velocity = future_velocity;
-
+        update_object(obj,dt);
         touch_tiles(*obj);
-        build_quadtree();
-        std::vector<GameObject*> collides_with = quadtree.query_range(player->get_bounding_box());
-        if (collides_with.size()>1) {
-            std::cout<<"collided";
+    }
+
+    for (auto& projectile : projectiles) {
+        update_object(projectile,dt);
+        constexpr float stop_epsilon = 1e-3f;
+        if (std::abs(projectile->physics.velocity.x) < stop_epsilon) {
+            projectile->elapsed = projectile->lifetime + 1.0;
         }
     }
 
+    build_quadtree();
+    std::vector<GameObject*> collides_with = quadtree.query_range(player->get_bounding_box());
+    const bool player_is_attacking = player->fsm != nullptr && player->fsm->current_type == StateType::Attacking;
+    for (auto& obj: collides_with) {
+        if (obj==player)continue;
+        if (player_is_attacking) {
+            obj->take_damage(player->damage);
+        }
+        else {
+            player->take_damage(obj->damage);
+        }
+    }
+
+    //check for collission w/ projectile und enemy
+    for (auto& projectile : projectiles) {
+        std::vector<GameObject*> p_collides_with = quadtree.query_range(projectile->get_bounding_box());
+        for (auto& obj : p_collides_with) {
+            if (obj == player) continue;
+            obj->take_damage(projectile->damage);
+            projectile->elapsed += projectile->lifetime;
+        }
+    }
+    // std::partition puts objects that return TRUE at the beginning.
+    // So we flip the logic: Keep alive objects at the front.
+    auto itr = std::stable_partition(game_objects.begin(), game_objects.end(),
+        [](GameObject* obj) { return obj->is_alive; }
+    );
+
+    // Now [itr, end) contains the original pointers to the dead objects
+    std::for_each(itr, game_objects.end(), [](GameObject* p) { delete p; });
+    game_objects.erase(itr, game_objects.end());
+
+    // same for projectiles
+    auto p_itr = std::stable_partition(projectiles.begin(), projectiles.end(),
+        [](Projectile* projectile) { return projectile->elapsed <= projectile->lifetime; }   );
+
+    std::for_each(p_itr, projectiles.end(), [](Projectile* p) { delete p; });
+    projectiles.erase(p_itr, projectiles.end());
+
+    if (!player->is_alive) {
+        end_game=true;
+        return;
+    }
+
 }
+
+void World::update_object(GameObject *obj, float dt) {
+    // currently only updating player
+    obj->update(*this, dt);
+    auto position = obj->physics.position;
+    auto velocity = obj->physics.velocity;
+    auto acceleration = obj->physics.acceleration;
+
+    velocity += 0.5f * acceleration * dt;
+    position += velocity * dt;
+    velocity += 0.5f * acceleration * dt;
+    velocity.x *= obj->physics.damping;
+
+    velocity.x = std::clamp(velocity.x, -obj->physics.terminal_velocity, obj->physics.terminal_velocity);
+    velocity.y = std::clamp(velocity.y, -obj->physics.terminal_velocity, obj->physics.terminal_velocity);
+
+    // check for x collisions
+    // Check for collisions with the world - x direction
+    Vec<float> future_position{position.x, obj->physics.position.y};
+    Vec<float> future_velocity{velocity.x, 0};
+    move_to(future_position, obj->size, future_velocity);
+
+    // y direction attempt after (maybe) moving in x
+    future_velocity.y = velocity.y;
+    future_position.y = position.y;
+    move_to(future_position, obj->size, future_velocity);
+
+    // update player
+    obj->physics.position = future_position;
+    obj->physics.velocity = future_velocity;
+}
+
 
 
 
@@ -182,7 +235,7 @@ void World::load_level(const Level &level) {
     for (const auto& [pos, tile_id] : level.tile_locations) {
         tilemap(pos.x, pos.y) = level.tile_types.at(tile_id);
     }
-    audio->load_sounds({});
+    audio->load_sounds(level.sounds);
 
     for (const auto& [pos, enemy_name] : level.enemy_locations) {
         auto enemy = new GameObject{enemy_name, nullptr,{12,12,12,12}, nullptr};
@@ -190,6 +243,8 @@ void World::load_level(const Level &level) {
         game_objects.push_back(enemy);
     }
     game_objects.push_back(player);
+
+    backgrounds = level.backgrounds;
 }
 
 void World::touch_tiles(GameObject& obj) {

@@ -40,8 +40,10 @@ set(SDLMIXER_WAVPACK OFF)
 set(SDLMIXER_MOD OFF)
 set(SDLMIXER_OPUS OFF)
 
+
+
 # FetchContent_MakeAvailable(SDL SDL_mixer SDL_image)
-FetchContent_MakeAvailable(SDL SDL_mixer)
+FetchContent_MakeAvailable(SDL SDL_mixer )
 
 add_subdirectory(utility)
 add_subdirectory(graphics)

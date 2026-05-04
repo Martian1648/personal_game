@@ -7,7 +7,7 @@
 #include "keyboardinput.h"
 
 void Keyboard_Input::get_input() {
-    if (next_action_type == ActionType::Jump) {
+    if (next_action_type == ActionType::Jump || next_action_type == ActionType::Attack) {
         return;
     }
     const bool *key_states = SDL_GetKeyboardState(NULL);
@@ -37,12 +37,19 @@ void Keyboard_Input::handle_input(World &world, GameObject &obj) {
     }
 }
 
-void Keyboard_Input::collect_discrete_event(SDL_Event *event) {
+Action* Keyboard_Input::collect_discrete_event(SDL_Event *event) {
     if (event->type == SDL_EVENT_KEY_DOWN && event->key.repeat==0) {
         if (event->key.scancode == SDL_SCANCODE_SPACE) {
             next_action_type = ActionType::Jump;
         }
+        if (event->key.scancode == SDL_SCANCODE_E) {
+            next_action_type = ActionType::Attack;
+        }
+        if (event -> key.scancode == SDL_SCANCODE_F) {
+            return new ShootFireball();
+        }
     }
+    return nullptr;
 }
 
 

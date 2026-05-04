@@ -2,19 +2,19 @@
     "sprites" : [
         {
             "name" : "idle",
-            "filename" : "slime-idle.png",
+            "filename" : "Rat_Gray_Stand.png",
             "location" : [0, 0],
             "size" : [48, 48],
-            "scale" : 1.5,
+            "scaler" : [3,2],
             "number_of_frames" : 6,
             "dt_per_frame" : 0.1
         },
         {
             "name" : "walking",
-            "filename" : "slime-walking.png",
+            "filename" : "Rat_Gray_Run.png",
             "location" : [0, 0],
             "size" : [48, 48],
-            "scale" : 1.5,
+            "scaler" : [3,2],
             "number_of_frames" : 6,
             "dt_per_frame" : 0.1
         }
@@ -26,7 +26,11 @@
         "damping": 0.9,
         "walk_acceleration": 60.0,
         "jump_velocity": 20.0,
-        "terminal_velocity": 30.0
+        "terminal_velocity": 30.0,
+        "sprint_acceleration_multiplier" : 1.5
     },
-    "size": [1,1]
+    "size": [1,1],
+    "health": 10,
+    "max_health": 10,
+    "damage": 1
 }

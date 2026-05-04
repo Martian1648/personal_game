@@ -13,7 +13,8 @@ enum class ActionType {
     MoveLeft,
     MoveRight,
     SprintLeft,
-    SprintRight
+    SprintRight,
+    Attack
 };
 class Action {
 public:
@@ -37,4 +38,8 @@ class SprintLeft :public Action {
 };
 class SprintRight :public Action {
     void perform(World& world, GameObject& obj) override;
+};
+
+class ShootFireball:public Action{
+    void perform(World &world, GameObject &obj) override;
 };

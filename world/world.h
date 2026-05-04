@@ -16,6 +16,7 @@
 class GameObject;
 class Audio;
 class Event;
+class Projectile;
 class World {
 public:
     World(const Level& level, Audio& audio,GameObject* player,std::map<std::string, Event*>& events);
@@ -26,7 +27,9 @@ public:
     void move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velocity);
     void load_level(const Level& level);
     bool end_level{false};
+    bool end_game{false};
     void touch_tiles(GameObject& obj);
+    void update_object(GameObject* obj, float dt);
     void build_quadtree();
     Tilemap tilemap;
     Audio* audio;
@@ -34,4 +37,7 @@ public:
     Quadtree quadtree;
     std::map<std::string, Event*> events;
     std::vector<GameObject*>game_objects;
+    std::vector<Projectile*> projectiles;
+    std::map<std::string,std::function<GameObject*()>> available_items;
+    std::vector<Background> backgrounds;
 };

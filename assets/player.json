@@ -35,6 +35,15 @@
       "scaler": [64,42],
       "number_of_frames": 8,
       "dt_per_frame" : 0.1
+    },
+    {
+      "name" : "attacking",
+      "filename" : "player_attack.png",
+      "location" : [0,0],
+      "size" : [59,59],
+      "scaler": [64,42],
+      "number_of_frames": 6,
+      "dt_per_frame" : 0.05
     }
   ],
   "physics" : {

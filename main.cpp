@@ -7,12 +7,12 @@
 
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
-    if (!SDL_Init(SDL_INIT_VIDEO)) {
+    if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_GAMEPAD)) {
         SDL_Log("Couldn't initialize SDL: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
 
-    auto game = new Game("Ludo Bonus", 1280, 720);
+    auto game = new Game("Ludo Bonus", 960, 720);
     *appstate = game;
 
     return SDL_APP_CONTINUE;

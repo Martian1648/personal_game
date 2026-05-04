@@ -1,0 +1,36 @@
+{
+    "sprites" : [
+        {
+            "name" : "idle",
+            "filename" : "burd.png",
+            "location" : [0, 0],
+            "size" : [68, 68],
+            "scaler" : [68,64],
+            "number_of_frames" : 7,
+            "dt_per_frame" : 0.1
+        },
+        {
+            "name" : "walking",
+            "filename" : "burd.png",
+            "location" : [0, 0],
+            "size" : [68, 68],
+            "scaler" : [68,64],
+            "number_of_frames" : 7,
+            "dt_per_frame" : 0.1
+        }
+    ],
+    "physics" : {
+        "velocity": [0, 0],
+        "acceleration" : [0, -30],
+        "gravity": -30.0,
+        "damping": 0.9,
+        "walk_acceleration": 60.0,
+        "jump_velocity": 20.0,
+        "terminal_velocity": 30.0,
+        "sprint_acceleration_multiplier" : 1.5
+    },
+    "size": [1,1],
+    "health": 10,
+    "max_health": 10,
+    "damage": 1
+}

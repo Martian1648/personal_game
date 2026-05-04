@@ -5,6 +5,9 @@
 */
 
 #include "camera.h"
+#include <cmath>
+#include <filesystem>
+#include <iostream>
 
 #include "graphics.h"
 #include "physics.h"
@@ -13,6 +16,20 @@ Camera::Camera(Graphics &graphics, float tilesize):
 graphics{graphics}, tilesize{tilesize}{
 calculate_visible_tiles();
     physics.damping=0.9;
+    auto path = (std::filesystem::current_path() / "assets" / "trophy.png").string();
+    trophy_sprite.texture_id = graphics.get_texture_id(path);
+    SDL_Texture* tex = graphics.textures.at(trophy_sprite.texture_id);
+    float w, h;
+    SDL_GetTextureSize(tex, &w, &h);
+    trophy_sprite.size = {w, h};
+    trophy_sprite.center = trophy_sprite.size / 2.0f;
+
+     path = (std::filesystem::current_path() / "assets" / "skull.png").string();
+    skull_sprite.texture_id = graphics.get_texture_id(path);
+    tex = graphics.textures.at(skull_sprite.texture_id);
+    SDL_GetTextureSize(tex, &w, &h);
+    skull_sprite.size = {w, h};
+    skull_sprite.center = skull_sprite.size / 2.0f;
 }
 
 void Camera::calculate_visible_tiles() {
@@ -76,19 +93,21 @@ void Camera::render(const Tilemap &tilemap) const {
                 render(position, tile.sprite);
             }
             else {
-                render(position, {100,100,100,255}, true);
+
             }
             if (grid_toggle.on) {
-                render(position, {0,0,0, 255}, false);
+                render(position, {100,100,100,255}, true);
+                Color col = {0,0,0, 0};
+                render(position, col, false);
             }
         }
     }
 }
 
-void Camera::render(const Vec<float> &position, const Sprite &sprite) const {
+void Camera::render(const Vec<float> &position, const Sprite &sprite, bool flash) const {
     Vec<float> pixel = world_to_screen(position);
     pixel.y += tilesize/2;
-    graphics.draw_sprite(pixel, sprite);
+    graphics.draw_sprite(pixel, sprite, flash);
 }
 
 void Camera::render(const GameObject &obj) const {
@@ -96,7 +115,9 @@ void Camera::render(const GameObject &obj) const {
         render(obj.physics.position, obj.color);
     }
 
-    render(obj.physics.position, obj.sprite);
+
+
+    render(obj.physics.position, obj.sprite, obj.flash_sprite());
 }
 
 
@@ -108,6 +129,50 @@ void Camera::set_location(const Vec<float> & new_location) {
     }
 }
 
+void Camera::render(const std::vector<Background>& backgrounds) const {
+    for (auto background : backgrounds) {
+        const Sprite& sprite = background.sprite;
+        float sprite_width = sprite.size.x * sprite.scale;
+        if (sprite_width <= 0.0f) continue;
+
+        float shift = physics.position.x / background.distance;
+        float wrapped = std::fmod(shift, sprite_width);
+        if (wrapped < 0.0f) {
+            wrapped += sprite_width;
+        }
+
+        float start = -wrapped;
+        for (float x = start; x < graphics.width; x += sprite_width) {
+            graphics.draw_sprite({x, 0}, sprite);
+        }
+    }
+}
 
 
+void Camera::render_loss() {
+    SDL_FRect full_screen{0.0f, 0.0f,
+                           static_cast<float>(graphics.width),
+                           static_cast<float>(graphics.height)};
+    graphics.draw(full_screen, Color{0, 0, 0, 180}, true);
 
+    Vec<float> pos{
+        (graphics.width  - skull_sprite.size.x) / 2.0f,
+        (graphics.height - skull_sprite.size.y) / 2.0f
+    };
+    graphics.draw_sprite(pos, skull_sprite, false);
+    std::cout<<"YOU SUCK\n";
+}
+
+void Camera::render_victory() {
+    SDL_FRect full_screen{0.0f, 0.0f,
+                          static_cast<float>(graphics.width),
+                          static_cast<float>(graphics.height)};
+    graphics.draw(full_screen, Color{0, 0, 0, 180}, true);
+
+    Vec<float> pos{
+        (graphics.width  - trophy_sprite.size.x) / 2.0f,
+        (graphics.height - trophy_sprite.size.y) / 2.0f
+    };
+    graphics.draw_sprite(pos, trophy_sprite, false);
+    std::cout<<"Well done!\n";
+}
